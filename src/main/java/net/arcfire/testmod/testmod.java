@@ -1,6 +1,7 @@
 package net.arcfire.testmod;
 
 import com.mojang.logging.LogUtils;
+import net.arcfire.testmod.item.Moditems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -24,6 +25,8 @@ public class testmod
     public testmod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        Moditems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
